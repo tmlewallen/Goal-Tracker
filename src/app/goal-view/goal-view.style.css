@@ -1,0 +1,29 @@
+.violetRow {
+  background-color: #3F51B5;
+  color: #FFFFFF;
+}
+
+.tealRow{
+  background-color: #009688;
+  color: #FFFFFF;
+}
+
+.whiteRow-Teal {
+  background-color : #FFFFFF;
+  color : #009688;
+}
+
+.whiteRow-Violet {
+  background-color : #FFFFFF;
+  color : #3F51B5;
+}
+
+p {
+  font-weight: 300;
+  font-size : 1.4em;
+}
+
+h3 {
+  font-weight: 300;
+  font-style : italic;
+}
