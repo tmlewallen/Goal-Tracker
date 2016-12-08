@@ -11,7 +11,6 @@ export class Goal {
   type: string;
   startDate: string;
   endDate: string;
-  entries: Entry[];
   frequency: number;
   period: string;
   lastModified: string;

@@ -1,19 +1,21 @@
 <div [ngClass]="getClass(index)" class="row no-margin">
   <div class="container">
     <div class="row valign-wrapper">
-      <div class="col s9 m10 l10">
+      <div class="col s12 m12 l12">
         <h3>{{goal.name}} {{goal.frequency}} time(s) per {{goal.period}}</h3>
+        <h4>{{goal.description}}</h4>
       </div>
-      <div class="col s3 m2 l2">
-        <!--<a href="#!" class="valign pull-right btn-floating btn-large waves-effect waves-light pink accent-2 hoverable">
+      <!--<div class="col s3 m2 l2">
+        <a href="#!" class="valign pull-right btn-floating btn-large waves-effect waves-light pink accent-2 hoverable">
           <i class="material-icons small">done</i>
           <i class="fa fa-align-center fa-calendar-plus-o"></i>
-        </a>-->
-      </div>
+        </a>
+      </div>-->
     </div>
     <div class="row">
       <div class="col l12 m12 s12">
         <p>Since {{goal.startDate}}</p>
+        <p>From {{goal.startDate}} to {{goal.endDate}}</p>
       </div>
       <div class="col l12 m12 s12">
         <ani-list [goalId]="goal._id"></ani-list>

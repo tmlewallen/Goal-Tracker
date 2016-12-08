@@ -17,7 +17,6 @@ let goal = () : Goal => {
   g.type= 'goal';
   g.startDate= '06/10/1992';
   g.endDate= '06/10/2002';
-  g.entries = [];
   g.frequency= 3;
   g.period = 'week'
   g.lastModified= 'today';
@@ -27,13 +26,7 @@ let goal = () : Goal => {
 var GOALS : Goal[] = [];
 for (let i = 1; i < 10; i++){
   let g : Goal = goal();
-  g.id = '' + i;
-  for (let j = 10; j > i; j--){
-    for (let k = 0; k < 10; k++){
-      let e : Entry = entry();
-      g.entries.push(e);
-    }
-  }
+  g._id = '' + i;
   // console.log(g);
   GOALS.push(g);
 }
