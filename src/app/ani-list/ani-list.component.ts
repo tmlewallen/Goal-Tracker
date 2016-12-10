@@ -31,6 +31,7 @@ export class AniList implements AfterViewInit, OnInit {
     this.goalService.getEntries(this.goalId).subscribe(
       (result) => {
         this.entries = result;
+        console.log(this.entries);
         this.rippleShow(0);
       },
       error => console.error(error)
