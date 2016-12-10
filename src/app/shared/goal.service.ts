@@ -4,7 +4,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { Goal } from '../shared/Goal';
+import { Goal } from '../shared/goal';
 import { MOCK_GOALS } from './mock-data';
 
 import 'rxjs/add/operator/catch';
