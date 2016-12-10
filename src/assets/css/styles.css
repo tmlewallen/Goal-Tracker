@@ -1,0 +1,21 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.no-padding {
+  padding : 0px !important;
+}
+
+.no-margin {
+  margin : 0px !important;
+}
+
+img.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+img.hidden{
+  opacity : 0;
+}
