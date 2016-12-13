@@ -7,8 +7,8 @@
 # dependencies
 /node_modules
 /bower_components
-/src/assets/fonts/
-/src/assets/vendor/
+/src/assets/vendor
+/src/assets/fonts
 # IDEs and editors
 /.idea
 /.vscode
