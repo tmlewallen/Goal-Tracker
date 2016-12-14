@@ -3,15 +3,17 @@
  */
 
 import { Entry } from './entry';
+import { GoalPeriod } from './goal-period.enum';
+import { GoalType } from './goal-type.enum';
 
 export class Goal {
   _id: string;
   name: string;
   description: string;
-  type: string;
-  startDate: string;
-  endDate: string;
+  type: GoalType;
+  startDate: Date;
+  endDate: Date;
   frequency: number;
-  period: string;
-  lastModified: string;
+  period: GoalPeriod;
+  lastModified: Date;
 }

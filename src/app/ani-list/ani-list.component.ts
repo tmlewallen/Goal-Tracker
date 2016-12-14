@@ -6,6 +6,7 @@ import { GoalService } from '../shared/goal.service';
 
 @Component({
   selector: 'ani-list',
+  styleUrls : ['./ani-list.css'],
   providers: [GoalService],
   templateUrl: 'app/ani-list/ani-list.component.html'
 })
@@ -13,9 +14,11 @@ export class AniList implements AfterViewInit, OnInit {
 
   @Input()  
   goalId : string;
+  @Input()
+  period : number;
   entries : Entry[] = [];
   shownEntries : Entry[] = [];
-
+  
   constructor(private goalService : GoalService){ }
 
   rippleShow(index : number){
