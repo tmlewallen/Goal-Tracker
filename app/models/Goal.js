@@ -11,12 +11,12 @@ var goalSchema = new Schema({
     },
     name : String,
     description : String,
-    type : String,
-    startDate : String,
-    endDate : String,
+    type : Number,
+    startDate : Date,
+    endDate : Date,
     frequency : Number,
-    period : String,
-    lastModified : String
+    period : Number,
+    lastModified : Date
 }, {collection : 'goal'});
 
 var Goal = mongoose.model('Goal',goalSchema);
