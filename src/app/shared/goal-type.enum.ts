@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export enum GoalType{
   TARGET = 1,
-  HABIT
+  ONGOING
 }
 
 @Pipe({name: 'goalType'})
@@ -11,8 +11,8 @@ export class GoalTypePipe implements PipeTransform {
     switch(val){
       case GoalType.TARGET:
         return "Target";
-      case GoalType.HABIT:
-        return "Habit";
+      case GoalType.ONGOING:
+        return "Ongoing";
       default :
         return "";
     }

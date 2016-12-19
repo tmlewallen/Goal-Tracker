@@ -4,7 +4,7 @@
 
 export class Entry {
   goalId : string;
-  timestamp : string;
+  timestamp : Date;
   note : string;
   state : string;
   hidden: boolean;

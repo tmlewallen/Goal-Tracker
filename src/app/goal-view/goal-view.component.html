@@ -1,24 +1,20 @@
 <div [ngClass]="getClass(index)" class="row no-margin">
   <div class="container">
-    <div class="row valign-wrapper">
+    <div class="row">
       <div class="col s12 m12 l12">
         <h3>{{ goal.name }} {{ goal.frequency }} time(s) per {{ goal.period | goalPeriod }}</h3>
-        <h4>{{ goal.description }} - {{ goal.type | goalType }}</h4>
-      </div>
-      <!--<div class="col s3 m2 l2">
-        <a href="#!" class="valign pull-right btn-floating btn-large waves-effect waves-light pink accent-2 hoverable">
-          <i class="material-icons small">done</i>
-          <i class="fa fa-align-center fa-calendar-plus-o"></i>
-        </a>
-      </div>-->
-    </div>
-    <div class="row">
-      <div class="col l12 m12 s12">
-        <p>Since {{ goal.startDate | date:"MM/dd/yyyy" }}</p>
-        <p>From {{ goal.startDate | date:"MM/dd/yyyy" }} to {{ goal.endDate | date:"MM/dd/yyyy" }}</p>
       </div>
       <div class="col l12 m12 s12">
-        <ani-list [goalId]="goal._id" [period]="2"></ani-list>
+        <p>{{ goal.description }}</p>
+        <div *ngIf="goal.type === 2">
+          <p class="date-range">Since {{ goal.startDate | date:"longDate" }}</p>
+        </div>
+        <div *ngIf="goal.type === 1">
+          <p class="date-range">From {{ goal.startDate | date:"longDate" }} to {{ goal.endDate | date:"longDate" }}</p>
+        </div>
+      </div>
+      <div class="col l12 m12 s12">
+        <ani-list [goalId]="goal._id" [period]="goal.period"></ani-list>
       </div>
     </div>
   </div>

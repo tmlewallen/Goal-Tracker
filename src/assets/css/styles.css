@@ -19,3 +19,7 @@ img.background {
 img.hidden{
   opacity : 0;
 }
+
+p.date-range{
+  font-style:italic;
+}

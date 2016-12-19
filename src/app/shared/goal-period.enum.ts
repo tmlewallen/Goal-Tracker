@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export enum GoalPeriod{
   DAY = 1,
-  WEEK,
-  MONTH,
-  YEAR
+  WEEK = 7,
+  MONTH = 30,
+  YEAR = 365
 }
 
 @Pipe({name: 'goalPeriod'})
