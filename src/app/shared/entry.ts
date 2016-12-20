@@ -7,5 +7,5 @@ export class Entry {
   timestamp : Date;
   note : string;
   state : string;
-  hidden: boolean;
+  active: boolean;
 }

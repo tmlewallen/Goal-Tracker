@@ -9,7 +9,7 @@ var entrySchema = new Schema({
     goalId : String,
     timestamp : Date,
     note : String,
-    state : Date
+    active : Boolean
 }, {collection : 'entry'});
 
 var Entry = mongoose.model('Entry',entrySchema);

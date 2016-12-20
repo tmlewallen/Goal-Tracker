@@ -1,4 +1,4 @@
 <span *ngFor="let entry of shownEntries; let ndx = index">
   <!--<i *ngIf="ndx % period === 0 && ndx !== 0" class="fa fa-square fa-2x animated bounceIn"></i>-->
-  <i title="{{entry.timestamp | date:'mediumDate'}}" class="fa fa-square fa-3x animated bounceIn"></i>
+  <i [ngClass]="{'inactive' : !entry.active}" title="{{entry.timestamp | date:'mediumDate'}}" class="fa fa-square fa-3x animated bounceIn"></i>
 </span>

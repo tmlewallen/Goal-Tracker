@@ -23,3 +23,7 @@ img.hidden{
 p.date-range{
   font-style:italic;
 }
+
+i.inactive {
+  color: rgba(255,255,255,.4);
+}
