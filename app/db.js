@@ -4,7 +4,7 @@
 
 let mongoose = require('mongoose');
 let env = process.env.ENV;
-let deets = env === 'PROD' ? require('./secrets-prod') : require('./secrets-test');
+let deets = env === 'PROD' ? require('./secrets-prod') : require('./secrets');
 if (deets.local){
     mongoose.connect('mongodb://localhost/GoalTracker');
     console.log('Connecting to localhost...');
