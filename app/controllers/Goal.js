@@ -47,7 +47,9 @@ app.route('/list/:id/entries')
     .get( (req, res) => {
         //Call goalModel logic
         var id = req.params.id;
-        entryModel.find({goalId : id}, (err, result) => {
+        entryModel.find({goalId : id})
+          .sort('timestamp')
+          .exec( (err, result) => {
             if (err){
                 res.status(500).send(err);
             }
@@ -60,14 +62,16 @@ app.route('/list/:id/entries')
 
 app.route('/list')
     .get( (req, res) => {
-        goalModel.find({}, (err, result) => {
-            if (err){
-                res.status(500).send(err);
-            }
-            else {
-                res.status(200).send(result);
-            }
-        })
+        goalModel.find({})
+          .sort('done')
+          .exec( (err, result) => {
+              if (err){
+                  res.status(500).send(err);
+              }
+              else {
+                  res.status(200).send(result);
+              }
+          });
     });
 
 

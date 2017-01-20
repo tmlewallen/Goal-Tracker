@@ -1,4 +1,4 @@
-<span [ngClass]="{'inactive' : !entry.active}" *ngFor="let entry of shownEntries; let ndx = index">
-  <!--<i *ngIf="ndx % period === 0 && ndx !== 0" class="fa fa-square fa-2x animated bounceIn"></i>-->
-  <i title="{{entry.timestamp | date:'mediumDate'}}" class="fa fa-square fa-3x animated bounceIn"></i>
+<span class="record-icon" *ngFor="let entry of shownEntries; let ndx = index">
+  <i *ngIf="ndx % period === 0 && ndx !== 0 && period !== 1" class="separator"></i>
+  <span [ngClass]="{'inactive' : !entry.active}" ><i title="{{entry.timestamp | date:'fullDate'}}" class="fa fa-square animated bounceIn" ></i></span>
 </span>

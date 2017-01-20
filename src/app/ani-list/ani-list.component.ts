@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
 import { Entry } from '../shared/entry';
-import { Goal } from '../shared/goal';
 import { GoalService } from '../shared/goal.service';
 
 
@@ -8,17 +7,17 @@ import { GoalService } from '../shared/goal.service';
   selector: 'ani-list',
   styleUrls : ['./ani-list.css'],
   providers: [GoalService],
-  templateUrl: 'app/ani-list/ani-list.component.html'
+  templateUrl: './ani-list.component.html'
 })
 export class AniList implements AfterViewInit, OnInit {
 
-  @Input()  
+  @Input()
   goalId : string;
   @Input()
   period : number;
   entries : Entry[] = [];
   shownEntries : Entry[] = [];
-  
+
   constructor(private goalService : GoalService){ }
 
   rippleShow(index : number){
@@ -29,7 +28,7 @@ export class AniList implements AfterViewInit, OnInit {
       }, 50);
     }
   };
-  
+
   ngOnInit() {
     this.goalService.getEntries(this.goalId).subscribe(
       (result) => {
@@ -42,7 +41,7 @@ export class AniList implements AfterViewInit, OnInit {
   }
 
   ngAfterViewInit(){
-    
+
   }
 
 }

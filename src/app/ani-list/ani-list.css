@@ -1,3 +1,12 @@
 .separator {
-  border-left: thick solid #000000;
+  padding-right: 24px;
+}
+
+.fa {
+  font-size: 1em !important;
+}
+
+.record-icon {
+  margin-right : -6px;
+  font-size:3em;
 }

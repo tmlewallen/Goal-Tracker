@@ -9,8 +9,8 @@ import { AniList } from '../ani-list/ani-list.component';
 
 @Component({
   selector: 'goal-view',
-  styleUrls: ['app/goal-view/goal-view.style.css'],
-  templateUrl: 'app/goal-view/goal-view.component.html',
+  styleUrls: ['./goal-view.style.css'],
+  templateUrl: './goal-view.component.html',
 })
 export class GoalView implements OnInit {
   @Input()
@@ -19,7 +19,7 @@ export class GoalView implements OnInit {
   index : number;
 
   ngOnInit(){
-        
+
   }
 
   getClass(index : number){

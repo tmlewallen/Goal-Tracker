@@ -12,19 +12,19 @@ import { GoalView } from '../goal-view/goal-view.component';
 @Component({
   selector: 'goal-list-view',
   providers: [GoalService],
-  templateUrl: 'app/goal-list-view/goal-list-view.component.html'
+  templateUrl: './goal-list-view.component.html'
 })
 export class GoalListView implements OnInit {
-  
+
   goals : Goal[];
 
   constructor(private goalService : GoalService){ this.goalService = goalService}
-  
+
   ngOnInit(){
     this.goalService.getGoals().subscribe( (goals) => {
       this.goals = goals
-    }, 
+    },
     err => console.error(err));
   }
-  
+
 }

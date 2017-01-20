@@ -16,7 +16,8 @@ var goalSchema = new Schema({
     endDate : Date,
     frequency : Number,
     period : Number,
-    lastModified : Date
+    lastModified : Date,
+    done : Boolean
 }, {collection : 'goal'});
 
 var Goal = mongoose.model('Goal',goalSchema);
