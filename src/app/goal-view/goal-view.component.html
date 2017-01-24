@@ -2,11 +2,14 @@
   <div class="container">
     <div class="row">
       <div class="col s12 m12 l12">
+        <div *ngIf="goal.done">
+          <h3><em>Done!</em></h3>
+        </div>
         <div *ngIf="goal.frequency === 1 && goal.period === 1">
           <h3>{{ goal.name }} every day</h3>
         </div>
         <div *ngIf="goal.frequency !== 1 || goal.period !== 1">
-          <h3>{{ goal.name }} {{ goal.frequency }} times per {{ goal.period | goalPeriod }}</h3>
+          <h3>{{ goal.name }} {{ goal.frequency }} time(s) per {{ goal.period | goalPeriod }}</h3>
         </div>
       </div>
       <div class="col l12 m12 s12">
