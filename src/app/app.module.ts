@@ -1,6 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { GoalListView } from './goal-list-view/goal-list-view.component';
@@ -11,7 +12,7 @@ import { GoalPeriodPipe } from './shared/goal-period.enum';
 
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule ],
+  imports:      [ BrowserModule, HttpModule, MaterialModule.forRoot() ],
   declarations: [ AppComponent, GoalListView, GoalView, AniList, GoalTypePipe, GoalPeriodPipe ],
   bootstrap:    [ AppComponent ]
 })

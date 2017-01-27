@@ -2,12 +2,10 @@
  * Created by Tmlewallen on 5/8/16.
  */
 var mongoose = require('mongoose');
-var shortid = require('shortid');
 var Schema = mongoose.Schema;
 var goalSchema = new Schema({
     _id: {
-        type: String,
-        'default': shortid.generate
+        type: String
     },
     name : String,
     description : String,

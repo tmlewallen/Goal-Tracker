@@ -1,4 +1,7 @@
-import { AfterViewInit, Component, Input, OnInit, trigger, state, style, transition, animate } from '@angular/core';
+import {
+    AfterViewInit, Component, Input, OnInit,
+    ElementRef, OnChanges, SimpleChange
+} from '@angular/core';
 import { Entry } from '../shared/entry';
 import { GoalService } from '../shared/goal.service';
 
@@ -9,16 +12,20 @@ import { GoalService } from '../shared/goal.service';
   providers: [GoalService],
   templateUrl: './ani-list.component.html'
 })
-export class AniList implements AfterViewInit, OnInit {
+export class AniList implements AfterViewInit, OnChanges {
 
   @Input()
   goalId : string;
   @Input()
   period : number;
+  @Input()
+  triggered : boolean;
   entries : Entry[] = [];
   shownEntries : Entry[] = [];
 
-  constructor(private goalService : GoalService){ }
+  constructor(elementRef : ElementRef, private goalService : GoalService){
+      console.log(elementRef);
+  }
 
   rippleShow(index : number){
     if(index < this.entries.length){
@@ -33,14 +40,27 @@ export class AniList implements AfterViewInit, OnInit {
     this.goalService.getEntries(this.goalId).subscribe(
       (result) => {
         this.entries = result;
-        console.log(this.entries);
-        this.rippleShow(0);
+        if (this.triggered) this.rippleShow(0);
       },
       error => console.error(error)
     );
   }
 
   ngAfterViewInit(){
+
+  }
+
+  ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+      for (let propName in changes) {
+          switch (propName){
+              case 'triggered':
+                  if (changes[propName].currentValue){
+                      this.rippleShow(0);
+                  }
+                  break;
+              default:
+          }
+      }
 
   }
 

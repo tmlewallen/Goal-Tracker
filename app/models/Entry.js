@@ -1,10 +1,8 @@
 var mongoose = require('mongoose');
-var shortid = require('shortid');
 var Schema = mongoose.Schema;
 var entrySchema = new Schema({
     _id: {
-        type: String,
-        'default': shortid.generate
+        type: String
     },
     goalId : String,
     timestamp : Date,

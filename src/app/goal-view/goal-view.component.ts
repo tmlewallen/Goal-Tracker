@@ -17,6 +17,7 @@ export class GoalView implements OnInit {
   goal: Goal;
   @Input()
   index : number;
+  triggered : boolean = false;
 
   ngOnInit(){
 

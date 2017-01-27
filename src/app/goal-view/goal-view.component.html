@@ -1,4 +1,4 @@
-<div [ngClass]="getClass(index)" class="row no-margin">
+<div (mouseover)="triggered=true;" [ngClass]="getClass(index)" class="row no-margin">
   <div class="container">
     <div class="row">
       <div class="col s12 m12 l12">
@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="col l12 m12 s12">
-        <ani-list [goalId]="goal._id" [period]="goal.period"></ani-list>
+        <ani-list [triggered]="triggered" [goalId]="goal._id" [period]="goal.period"></ani-list>
       </div>
     </div>
   </div>
