@@ -1,5 +1,7 @@
 #!/bin/bash
 
+gulp
+ng build
 cp app/secrets.js app/secrets-prod.js
 git add app/secrets-prod.js dist
 git commit -m "BUILD AUTO-COMMIT"
