@@ -9,3 +9,4 @@ heroku config:set ENV=PROD
 git push -f heroku master
 git reset HEAD^
 rm app/secrets-prod.js
+rm -rf dist/
